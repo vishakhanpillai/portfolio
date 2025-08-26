@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishakhan Pillai V P | Cybersecurity Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#dc2626',
+                        'primary-hover': '#ef4444',
+                        'dark-bg': '#0a0a0a',
+                        'light-bg': '#171717',
+                        'light-text': '#e5e5e5',
+                        'medium-text': '#a3a3a3',
+                        'border-color': '#262626',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out;
+        }
+        .cursor-dot::before {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.3) 0%, rgba(220, 38, 38, 0) 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link.active {
+            color: white;
+            font-weight: 600;
+        }
+        .nav-link.active .nav-indicator {
+            width: 3rem;
+            background-color: white;
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: white;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-light-text font-sans antialiased">
+
+    <div class="cursor-dot" data-cursor-dot></div>
+
+    <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+        <div class="lg:flex lg:justify-between lg:gap-4">
+            
+            <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+                <div>
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                        <a href="/" id="typing-heading"></a>
+                    </h1>
+                    <h2 class="mt-3 text-lg font-medium tracking-tight text-white sm:text-xl">
+                        Aspiring Cybersecurity Professional
+                    </h2>
+                    <p class="mt-4 max-w-xs leading-normal text-medium-text">
+                        I build and secure digital systems with a focus on offensive security.
+                    </p>
+
+                    <nav class="nav hidden lg:block" aria-label="In-page jump links">
+                        <ul class="mt-16 w-max">
+                            <li><a class="group flex items-center py-3 nav-link" href="#about"><span class="nav-indicator mr-4 h-px w-8 bg-medium-text transition-all group-hover:w-16 group-hover:bg-white"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-medium-text group-hover:text-white">About</span></a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#projects"><span class="nav-indicator mr-4 h-px w-8 bg-medium-text transition-all group-hover:w-16 group-hover:bg-white"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-medium-text group-hover:text-white">Projects</span></a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#skills"><span class="nav-indicator mr-4 h-px w-8 bg-medium-text transition-all group-hover:w-16 group-hover:bg-white"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-medium-text group-hover:text-white">Skills</span></a></li>
+                            <li><a class="group flex items-center py-3 nav-link" href="#certifications"><span class="nav-indicator mr-4 h-px w-8 bg-medium-text transition-all group-hover:w-16 group-hover:bg-white"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-medium-text group-hover:text-white">Certifications</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <a href="./resume.pdf" target="_blank" class="inline-block bg-transparent text-white font-semibold px-6 py-3 rounded-md border-2 border-primary hover:bg-primary transition-colors duration-300 mt-8">
+                        View Resume
+                    </a>
+                    <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
+                        <li class="mr-3 shrink-0"><a class="block p-2 border-2 border-transparent rounded-full hover:border-primary transition-colors" href="https://github.com/vishakhanpillai" target="_blank" rel="noreferrer noopener" title="GitHub"><span class="sr-only">GitHub</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></li>
+                        <li class="mr-3 shrink-0"><a class="block p-2 border-2 border-transparent rounded-full hover:border-primary transition-colors" href="https://linkedin.com/in/vishakhanpillai" target="_blank" rel="noreferrer noopener" title="LinkedIn"><span class="sr-only">LinkedIn</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg></a></li>
+                        <li class="mr-3 shrink-0"><a class="block p-2 border-2 border-transparent rounded-full hover:border-primary transition-colors" href="https://medium.com/@yourusername" target="_blank" rel="noreferrer noopener" title="Medium"><span class="sr-only">Medium</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M7.47 18.492a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0-1.06-1.06l-6 6a.75.75 0 0 0 0 1.06Z" opacity=".2"/><path d="M12 1.75A10.25 10.25 0 1 0 22.25 12 10.25 10.25 0 0 0 12 1.75ZM8.24 6.51c.6-.01 1.18.15 1.7.44.52.28.93.68 1.2 1.18.28.5.42 1.05.42 1.66v5.43c0 .6-.14 1.16-.42 1.66-.27.5-.68.9-1.2 1.18-.52.29-1.1.45-1.7.44-.62 0-1.2-.16-1.72-.47-.52-.3-1.02-.82-1.02-1.53V9.78c0-.71.5-1.23 1.02-1.53.52-.31 1.1-.47 1.72-.47Zm5.17 0c.6 0 1.16.16 1.68.47.52.31.82.73.82 1.26v6.52c0 .53-.3.95-.82 1.26-.52.31-1.08.47-1.68.47s-1.16-.16-1.68-.47c-.52-.31-.82-.73-.82-1.26V8.24c0-.53.3-.95.82-1.26.52-.31 1.08-.47 1.68-.47Zm4.58 0c.58 0 1.07.15 1.46.44.4.29.59.67.59 1.15v6.82c0 .48-.2.86-.59 1.15-.4.29-.88.44-1.46.44-.58 0-1.07-.15-1.46-.44-.4-.29-.59-.67-.59-1.15V8.1c0-.48.2-.86.59-1.15.39-.29.88-.44 1.46-.44Z"/></svg></a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+                
+                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 section-hidden">
+                    <p class="mb-4 text-lg">My journey into cybersecurity is driven by a fascination with its offensive aspects. I am constantly honing my skills through practical application and continuous learning, with the goal of contributing to real-world security projects.</p>
+                    <p class="text-lg">Currently, I'm an active <strong class="text-white">CTF Player on TryHackMe.com</strong>, where I develop proficiency in network exploitation, web application hacking, and system reconnaissance. This hands-on experience allows me to apply problem-solving and analytical thinking to tackle complex security scenarios.</p>
+                </section>
+
+                <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 section-hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white mb-8">Projects</h2>
+                    <div class="space-y-12">
+                        <a href="https://github.com/vishakhanpillai/red-team-chatbot" target="_blank" class="group block p-4 -mx-4 rounded-md hover:bg-light-bg/50 transition-colors duration-300"><h3 class="font-medium text-white group-hover:text-primary">Red Teaming & Offensive Security Chatbot</h3><p class="mt-2 text-sm leading-normal text-medium-text">An AI-powered chatbot to answer questions on cybersecurity, red teaming, and pentesting using the Groq API and Meta's LLAMA 3 model.</p><div class="mt-2 flex flex-wrap gap-2 text-xs"><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Gradio</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Groq API</span></div></a>
+                        <a href="https://github.com/vishakhanpillai/OpenRecon" target="_blank" class="group block p-4 -mx-4 rounded-md hover:bg-light-bg/50 transition-colors duration-300"><h3 class="font-medium text-white group-hover:text-primary">OpenRecon - Passive Reconnaissance Tool</h3><p class="mt-2 text-sm leading-normal text-medium-text">A Python tool to automate passive website reconnaissance, gathering domain info like WHOIS, DNS records, HTTP headers, and more.</p><div class="mt-2 flex flex-wrap gap-2 text-xs"><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">dnspython</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Reconnaissance</span></div></a>
+                        <a href="https://github.com/vishakhanpillai/Keylogger-Using-Pythonr" target="_blank" class="group block p-4 -mx-4 rounded-md hover:bg-light-bg/50 transition-colors duration-300"><h3 class="font-medium text-white group-hover:text-primary">Python Keylogger</h3><p class="mt-2 text-sm leading-normal text-medium-text">A stealthy keylogger designed to simulate post-compromise monitoring, featuring timed log exfiltration via email.</p><div class="mt-2 flex flex-wrap gap-2 text-xs"><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">Python</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">pynput</span><span class="bg-primary/20 text-primary px-2 py-1 rounded-full">smtplib</span></div></a>
+                    </div>
+                </section>
+
+                 <section id="skills" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 section-hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white mb-8">Skills</h2>
+                    <div class="flex flex-wrap gap-2"><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Python</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">C</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">C++</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Bash</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Red Teaming</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Nmap</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Burp Suite</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Metasploit</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Kali Linux</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Git</span><span class="bg-light-bg text-light-text text-sm font-medium px-4 py-2 rounded-md">Wireshark</span></div>
+                </section>
+
+                <section id="certifications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24 section-hidden">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-white mb-8">Certifications & Achievements</h2>
+                    <div class="space-y-6">
+                        <div class="bg-light-bg/50 p-4 rounded-md"><h3 class="font-medium text-white">Certified Ethical Hacking Associate</h3><p class="text-sm text-medium-text">Red Team Hacker Academy</p></div>
+                        <div class="bg-light-bg/50 p-4 rounded-md"><h3 class="font-medium text-white">Mastercard Cybersecurity Virtual Experience</h3><p class="text-sm text-medium-text">Forage</p></div>
+                        <div class="bg-light-bg/50 p-4 rounded-md"><h3 class="font-medium text-white">First Semester Topper</h3><p class="text-sm text-medium-text">Highest academic distinction in class (MCA).</p></div>
+                    </div>
+                </section>
+
+                <footer class="text-sm text-medium-text">
+                    <p class="flex justify-center">Coded with passion and a lot of coffee.</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <button id="to-top-button" title="Go To Top" class="hidden fixed bottom-5 right-5 z-50 p-3 bg-light-bg/50 backdrop-blur-sm rounded-full text-white hover:bg-primary transition-colors duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
+    <script>
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        window.addEventListener("mousemove", (e) => {
+            cursorDot.style.left = `${e.clientX}px`;
+            cursorDot.style.top = `${e.clientY}px`;
+        });
+
+        const typingElement = document.getElementById('typing-heading');
+        const textToType = "Vishakhan Pillai V P";
+        let i = 0;
+        function typeWriter() {
+            if (i < textToType.length) {
+                typingElement.innerHTML = textToType.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                typingElement.innerHTML = textToType;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add('section-visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section-hidden').forEach((el) => observer.observe(el));
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('#content section');
+        const onScroll = () => {
+            let currentSection = '';
+            contentSections.forEach(section => {
+                if (pageYOffset >= section.offsetTop - 60) currentSection = section.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.href.includes(currentSection)) link.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', onScroll);
+
+        const toTopButton = document.getElementById('to-top-button');
+        window.onscroll = () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove('hidden');
+            } else {
+                toTopButton.classList.add('hidden');
+            }
+        };
+        toTopButton.onclick = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+
+</body>
+</html>
