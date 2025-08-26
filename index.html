@@ -89,8 +89,6 @@
 </head>
 <body class="bg-dark-bg text-light-text font-sans antialiased">
 
-    <div class="cursor-dot" data-cursor-dot></div>
-
     <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div class="lg:flex lg:justify-between lg:gap-4">
             
@@ -169,12 +167,7 @@
     </button>
 
     <script>
-        const cursorDot = document.querySelector("[data-cursor-dot]");
-        window.addEventListener("mousemove", (e) => {
-            cursorDot.style.left = `${e.clientX}px`;
-            cursorDot.style.top = `${e.clientY}px`;
-        });
-
+        
         const typingElement = document.getElementById('typing-heading');
         const textToType = "Vishakhan Pillai V P";
         let i = 0;
